@@ -140,6 +140,9 @@
 (map! :n "]o" #'newline-below-same-mode)
 (map! :n "]O" #'newline-above-same-mode)
 
+;; Insert Nerd Font icons
+(map! :i "M-u" #'nerd-icons-insert)
+
 ;; Org mode
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "PROG(p)" "INTR(i)" "HOLD(h)" "DONE(d)")))
