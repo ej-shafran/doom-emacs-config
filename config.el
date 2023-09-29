@@ -39,9 +39,14 @@
 
 ;; Splash screen
 (setq fancy-splash-image (concat doom-user-dir "splash.svg"))
-;; Remove the widgets
-(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
-;; Add a footer note
+
+(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-footer)
+(assoc-delete-all "Recently opened files" +doom-dashboard-menu-sections)
+(assoc-delete-all "Reload last session" +doom-dashboard-menu-sections)
+(assoc-delete-all "Jump to bookmark" +doom-dashboard-menu-sections)
+(assoc-delete-all "Open private configuration" +doom-dashboard-menu-sections)
+(assoc-delete-all "Open documentation" +doom-dashboard-menu-sections)
+
 (add-hook! '+doom-dashboard-functions :append
   (insert "\n" (+doom-dashboard--center +doom-dashboard--width "Powered by Emacs!")))
 
